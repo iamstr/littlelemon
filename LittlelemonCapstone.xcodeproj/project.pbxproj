@@ -16,6 +16,10 @@
 		9FF9784E2BDC49AF0093369C /* LittlelemonCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9784D2BDC49AF0093369C /* LittlelemonCapstoneTests.swift */; };
 		9FF978582BDC49AF0093369C /* LittlelemonCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978572BDC49AF0093369C /* LittlelemonCapstoneUITests.swift */; };
 		9FF9785A2BDC49AF0093369C /* LittlelemonCapstoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978592BDC49AF0093369C /* LittlelemonCapstoneUITestsLaunchTests.swift */; };
+		9FF978692BDD69BC0093369C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978682BDD69BC0093369C /* OnboardingView.swift */; };
+		9FF9786B2BDE86480093369C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786A2BDE86480093369C /* HomeView.swift */; };
+		9FF9786D2BDE884F0093369C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786C2BDE884F0093369C /* MenuView.swift */; };
+		9FF9786F2BDE8BDD0093369C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		9FF978532BDC49AF0093369C /* LittlelemonCapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittlelemonCapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF978572BDC49AF0093369C /* LittlelemonCapstoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlelemonCapstoneUITests.swift; sourceTree = "<group>"; };
 		9FF978592BDC49AF0093369C /* LittlelemonCapstoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlelemonCapstoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9FF978682BDD69BC0093369C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		9FF9786A2BDE86480093369C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9FF9786C2BDE884F0093369C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 				9FF9783B2BDC49AF0093369C /* Assets.xcassets */,
 				9FF978402BDC49AF0093369C /* Persistence.swift */,
 				9FF978422BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld */,
+				9FF978682BDD69BC0093369C /* OnboardingView.swift */,
+				9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */,
+				9FF9786A2BDE86480093369C /* HomeView.swift */,
+				9FF9786C2BDE884F0093369C /* MenuView.swift */,
 				9FF9783D2BDC49AF0093369C /* Preview Content */,
 			);
 			path = LittlelemonCapstone;
@@ -263,9 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF9786D2BDE884F0093369C /* MenuView.swift in Sources */,
 				9FF978442BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld in Sources */,
 				9FF978412BDC49AF0093369C /* Persistence.swift in Sources */,
+				9FF9786F2BDE8BDD0093369C /* UserProfileView.swift in Sources */,
 				9FF9783A2BDC49AD0093369C /* ContentView.swift in Sources */,
+				9FF9786B2BDE86480093369C /* HomeView.swift in Sources */,
+				9FF978692BDD69BC0093369C /* OnboardingView.swift in Sources */,
 				9FF978382BDC49AD0093369C /* LittlelemonCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
