@@ -22,35 +22,86 @@ struct OnboardingView: View {
     
     var body: some View {
         NavigationStack {
-            
+            Image("Logo")
             
             NavigationView{
+                
                 VStack{
-                    TextField(
-                        "First name ",
-                        text: $firstName
-                    )
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .border(.secondary)
-        
-                    TextField(
-                        "Last Name",
-                        text: $lastName
-                    )
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Little Lemon")
+                                .foregroundColor(Color(hex:"#F4CE14"))
+                                .font(.largeTitle)
+                                .padding(.leading)
+                                .padding(.top,1)
+                            
+                            Text("Chicago")
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .padding(.leading)
+                            
+                            Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                                .foregroundColor(.white)
+                                .font(.subheadline).frame(maxWidth:.infinity)
+                                .padding([.leading, .bottom])
+                            
+                        }.padding(.horizontal)
+                        Spacer()
+                        Image("Hero image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: 120, maxHeight: 140)
+                            .clipShape(Rectangle())
+                            .cornerRadius(16)
+                    }.padding(.bottom,10).padding(.top,-40).background(Color.primaryColor1)
+                    VStack(alignment: .leading) {
+                        Text("First Name")
+                            .padding(.leading,20)
+                            .padding(.top,13)
+                            .padding(.bottom,-10)
+                            .foregroundColor(.gray)
+                        
+                        TextField(
+                            "First name ",
+                            text: $firstName
+                        )
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
+                        .textFieldStyle(MyTextFieldStyle())
+                    }
+                   
+                    VStack(alignment: .leading) {
+                        Text("Last Name").padding(.leading,20)
+                            .padding(.top,1)
+                            .padding(.bottom,-10)
+                            .foregroundColor(.gray)
+                        TextField(
+                            "Last Name",
+                            text: $lastName
+                        ).textFieldStyle(MyTextFieldStyle())
 
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .border(.secondary)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
+                    }
 
-                    TextField(
-                        "Email",
-                        text: $email
-                    )
+                   
+                    VStack(alignment: .leading) {
+                        Text("Last Name")
+                            .padding(.leading,20)
+                            .padding(.top,1)
+                            .padding(.bottom,-10)
+                            .foregroundColor(.gray)
+                        TextField(
+                            "Email",
+                            text: $email
+                        ).textFieldStyle(MyTextFieldStyle())
 
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .border(.secondary)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
+                    }
+
+                   
                     
                     
                     // Button to register user
@@ -65,11 +116,22 @@ struct OnboardingView: View {
                           
                             isLoggedIn = true
                         }
-                    } .navigationDestination(isPresented: $isLoggedIn){
+                    }.padding()
+                        .frame(maxWidth: .infinity)
+                        
+                    .background(Color.primaryColor1,in: RoundedRectangle(
+                        cornerRadius: 16,
+                        style: .continuous
+                    ))
+                   
+                    .foregroundColor(.white)
+                        .padding() .navigationDestination(isPresented: $isLoggedIn){
                         
                         
                         HomeView()
                     }
+                    
+                    Spacer()
                     
                 }
                 onAppear{
@@ -79,6 +141,7 @@ struct OnboardingView: View {
                                    }
                 }
             }
+            .padding(-10.0)
         
     }
         

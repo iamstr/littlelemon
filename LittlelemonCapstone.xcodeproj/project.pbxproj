@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FC695E62BE0476E00D34783 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FC695E42BE0476E00D34783 /* ExampleDatabase.xcdatamodeld */; };
+		9FC695E82BE0C97F00D34783 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC695E72BE0C97F00D34783 /* MenuItemView.swift */; };
+		9FE37DCA2BE2635B00D83399 /* TopNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE37DC92BE2635B00D83399 /* TopNavView.swift */; };
 		9FF978382BDC49AD0093369C /* LittlelemonCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978372BDC49AD0093369C /* LittlelemonCapstoneApp.swift */; };
 		9FF9783A2BDC49AD0093369C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978392BDC49AD0093369C /* ContentView.swift */; };
 		9FF9783C2BDC49AF0093369C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FF9783B2BDC49AF0093369C /* Assets.xcassets */; };
 		9FF9783F2BDC49AF0093369C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FF9783E2BDC49AF0093369C /* Preview Assets.xcassets */; };
-		9FF978412BDC49AF0093369C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978402BDC49AF0093369C /* Persistence.swift */; };
-		9FF978442BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978422BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld */; };
 		9FF9784E2BDC49AF0093369C /* LittlelemonCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9784D2BDC49AF0093369C /* LittlelemonCapstoneTests.swift */; };
 		9FF978582BDC49AF0093369C /* LittlelemonCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978572BDC49AF0093369C /* LittlelemonCapstoneUITests.swift */; };
 		9FF9785A2BDC49AF0093369C /* LittlelemonCapstoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978592BDC49AF0093369C /* LittlelemonCapstoneUITestsLaunchTests.swift */; };
@@ -20,6 +21,10 @@
 		9FF9786B2BDE86480093369C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786A2BDE86480093369C /* HomeView.swift */; };
 		9FF9786D2BDE884F0093369C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786C2BDE884F0093369C /* MenuView.swift */; };
 		9FF9786F2BDE8BDD0093369C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */; };
+		9FF978722BDEFCD20093369C /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978702BDEFCD20093369C /* FetchedObjects.swift */; };
+		9FF978732BDEFCD20093369C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978712BDEFCD20093369C /* Persistence.swift */; };
+		9FF978752BDEFD460093369C /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978742BDEFD460093369C /* MenuList.swift */; };
+		9FF978772BDEFD710093369C /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978762BDEFD710093369C /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9FC695E52BE0476E00D34783 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		9FC695E72BE0C97F00D34783 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		9FE37DC92BE2635B00D83399 /* TopNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavView.swift; sourceTree = "<group>"; };
 		9FF978342BDC49AD0093369C /* LittlelemonCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittlelemonCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF978372BDC49AD0093369C /* LittlelemonCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlelemonCapstoneApp.swift; sourceTree = "<group>"; };
 		9FF978392BDC49AD0093369C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FF9783B2BDC49AF0093369C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FF9783E2BDC49AF0093369C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9FF978402BDC49AF0093369C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9FF978432BDC49AF0093369C /* LittlelemonCapstone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittlelemonCapstone.xcdatamodel; sourceTree = "<group>"; };
 		9FF978492BDC49AF0093369C /* LittlelemonCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittlelemonCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF9784D2BDC49AF0093369C /* LittlelemonCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlelemonCapstoneTests.swift; sourceTree = "<group>"; };
 		9FF978532BDC49AF0093369C /* LittlelemonCapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittlelemonCapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +62,10 @@
 		9FF9786A2BDE86480093369C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9FF9786C2BDE884F0093369C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		9FF978702BDEFCD20093369C /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		9FF978712BDEFCD20093369C /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistence.swift; path = ../../../Downloads/KrOCQU2CTpmu1REIfryAvg_ae0cd909bf5e4e7db7525f835ddd50e1_CoreDataSupport/Persistence.swift; sourceTree = "<group>"; };
+		9FF978742BDEFD460093369C /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		9FF978762BDEFD710093369C /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,7 @@
 		9FF9782B2BDC49AD0093369C = {
 			isa = PBXGroup;
 			children = (
+				9FC695E42BE0476E00D34783 /* ExampleDatabase.xcdatamodeld */,
 				9FF978362BDC49AD0093369C /* LittlelemonCapstone */,
 				9FF9784C2BDC49AF0093369C /* LittlelemonCapstoneTests */,
 				9FF978562BDC49AF0093369C /* LittlelemonCapstoneUITests */,
@@ -109,12 +120,16 @@
 				9FF978372BDC49AD0093369C /* LittlelemonCapstoneApp.swift */,
 				9FF978392BDC49AD0093369C /* ContentView.swift */,
 				9FF9783B2BDC49AF0093369C /* Assets.xcassets */,
-				9FF978402BDC49AF0093369C /* Persistence.swift */,
-				9FF978422BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld */,
+				9FF978702BDEFCD20093369C /* FetchedObjects.swift */,
+				9FF978742BDEFD460093369C /* MenuList.swift */,
+				9FF978762BDEFD710093369C /* MenuItem.swift */,
+				9FF978712BDEFCD20093369C /* Persistence.swift */,
 				9FF978682BDD69BC0093369C /* OnboardingView.swift */,
 				9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */,
 				9FF9786A2BDE86480093369C /* HomeView.swift */,
 				9FF9786C2BDE884F0093369C /* MenuView.swift */,
+				9FE37DC92BE2635B00D83399 /* TopNavView.swift */,
+				9FC695E72BE0C97F00D34783 /* MenuItemView.swift */,
 				9FF9783D2BDC49AF0093369C /* Preview Content */,
 			);
 			path = LittlelemonCapstone;
@@ -275,14 +290,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC695E62BE0476E00D34783 /* ExampleDatabase.xcdatamodeld in Sources */,
 				9FF9786D2BDE884F0093369C /* MenuView.swift in Sources */,
-				9FF978442BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld in Sources */,
-				9FF978412BDC49AF0093369C /* Persistence.swift in Sources */,
 				9FF9786F2BDE8BDD0093369C /* UserProfileView.swift in Sources */,
+				9FE37DCA2BE2635B00D83399 /* TopNavView.swift in Sources */,
 				9FF9783A2BDC49AD0093369C /* ContentView.swift in Sources */,
+				9FC695E82BE0C97F00D34783 /* MenuItemView.swift in Sources */,
 				9FF9786B2BDE86480093369C /* HomeView.swift in Sources */,
 				9FF978692BDD69BC0093369C /* OnboardingView.swift in Sources */,
 				9FF978382BDC49AD0093369C /* LittlelemonCapstoneApp.swift in Sources */,
+				9FF978722BDEFCD20093369C /* FetchedObjects.swift in Sources */,
+				9FF978772BDEFD710093369C /* MenuItem.swift in Sources */,
+				9FF978752BDEFD460093369C /* MenuList.swift in Sources */,
+				9FF978732BDEFCD20093369C /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +473,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,6 +502,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,6 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamsatar.swift.LittlelemonCapstoneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamsatar.swift.LittlelemonCapstoneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -608,13 +632,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9FF978422BDC49AF0093369C /* LittlelemonCapstone.xcdatamodeld */ = {
+		9FC695E42BE0476E00D34783 /* ExampleDatabase.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9FF978432BDC49AF0093369C /* LittlelemonCapstone.xcdatamodel */,
+				9FC695E52BE0476E00D34783 /* ExampleDatabase.xcdatamodel */,
 			);
-			currentVersion = 9FF978432BDC49AF0093369C /* LittlelemonCapstone.xcdatamodel */;
-			path = LittlelemonCapstone.xcdatamodeld;
+			currentVersion = 9FC695E52BE0476E00D34783 /* ExampleDatabase.xcdatamodel */;
+			name = ExampleDatabase.xcdatamodeld;
+			path = /Users/iamsatar/Documents/LittlelemonCapstone/ExampleDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
