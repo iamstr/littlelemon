@@ -16,20 +16,56 @@ struct UserProfileView: View {
     @Environment(\.presentationMode) var presentation
 
     var body: some View {
-        VStack{
-            Text("Personal information")
-         
-            Image("profile-image-placeholder")
-            Text(UserDefaults.standard.string(forKey: kFirstName) ?? "")
-            Text(UserDefaults.standard.string(forKey: kLastName) ?? "")
-            Text(UserDefaults.standard.string(forKey: kEmail) ?? "")
+        NavigationView{
             
-            Button("Logout"){
-                UserDefaults.standard.set(false, forKey: kIsLoggedIn)
-                self.presentation.wrappedValue.dismiss()
+            
+            VStack{
+                
+                HStack {
+                   
+                    Image(systemName: "arrowshape.left.circle.fill")
+                        .font(.system(size: 26))
+                        .padding(.leading)
+                        .foregroundColor(.primaryColor1)
+
+                    Spacer()
+                        Image("Logo")  .padding([.trailing,.leading])
+                        Spacer()
+                        
+                        Image("profile-image-placeholder")
+                            .resizable()
+                            .aspectRatio( contentMode: .fit)
+                        
+                            .clipShape(Circle())
+                            .frame(maxHeight: 50)
+                            .padding([.trailing])
+                        
+
+                }
+                Text("Personal information")
+                
+                
+                Text(UserDefaults.standard.string(forKey: kFirstName) ?? "")
+                Text(UserDefaults.standard.string(forKey: kLastName) ?? "")
+                Text(UserDefaults.standard.string(forKey: kEmail) ?? "")
+                
+                
+                
+                Button("Logout"){
+                    UserDefaults.standard.set(false, forKey: kIsLoggedIn)
+                    self.presentation.wrappedValue.dismiss()
+                }.foregroundColor(.primaryColor1)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.secondaryColor1,in: RoundedRectangle(
+                        cornerRadius: 8,
+                        style: .continuous
+                    )) .padding()
+                   
+                Spacer()
             }
-            Spacer()
-        }
+            .navigationBarTitle("", displayMode: .inline)
+        }.navigationBarBackButtonHidden(true)
       
     }
 }

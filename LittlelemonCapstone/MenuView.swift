@@ -14,7 +14,7 @@ struct MenuView: View {
     
     @State private var searchText = ""
     @Environment(\.managedObjectContext) private var viewContext
-   
+    @Environment(\.presentationMode) var presentation
     
     
     func getMenuData() {
@@ -138,7 +138,10 @@ struct MenuView: View {
                            }.listStyle(.plain).padding([.horizontal,.top])
                        }
             .onAppear {
-                getMenuData() // Call getMenuData method on view appear
+                if !UserDefaults.standard.bool(forKey: kIsLoggedIn){
+                    self.presentation.wrappedValue.dismiss()
+                }
+                getMenuData()
             }
         }
     }
