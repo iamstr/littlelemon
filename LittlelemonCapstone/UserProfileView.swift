@@ -14,12 +14,16 @@ struct UserProfileView: View {
     let kEmail = "email_key"
     let kIsLoggedIn = "kIsLoggedIn"
     @Environment(\.presentationMode) var presentation
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var email: String = ""
+    @State private var doesClose = false
 
     var body: some View {
         NavigationView{
             
             
-            VStack{
+            VStack(alignment:.leading){
                 
                 HStack {
                    
@@ -42,13 +46,104 @@ struct UserProfileView: View {
                         
 
                 }
-                Text("Personal information")
+               
+                HStack {
+                    Text("Personal information")
+                        .font(.title2)
+                        .multilineTextAlignment(.leading)
+//                        .frame(maxWidth: .infinity)
+                        .fontWeight(.bold)
+                        .padding(.leading,18)
+                        
+                    Spacer()
+                }
                 
                 
-                Text(UserDefaults.standard.string(forKey: kFirstName) ?? "")
-                Text(UserDefaults.standard.string(forKey: kLastName) ?? "")
-                Text(UserDefaults.standard.string(forKey: kEmail) ?? "")
+                VStack(alignment: .leading) {
+                    Text("First Name")
+                        .padding(.leading,20)
+                        .padding(.top,1)
+                        .padding(.bottom,-10)
+                        .foregroundColor(.gray)
+                    
+                    TextField(
+                        "First name ",
+                        text: $firstName
+                    )
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .textFieldStyle(MyTextFieldStyle())
+                }
+               
+                VStack(alignment: .leading) {
+                    Text("Last Name").padding(.leading,20)
+                        .padding(.top,1)
+                        .padding(.bottom,-10)
+                        .foregroundColor(.gray)
+                    TextField(
+                        "Last Name",
+                        text: $lastName
+                    ).textFieldStyle(MyTextFieldStyle())
+
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                }
+
+               
+                VStack(alignment: .leading) {
+                    Text("Last Name")
+                        .padding(.leading,20)
+                        .padding(.top,1)
+                        .padding(.bottom,-10)
+                        .foregroundColor(.gray)
+                    TextField(
+                        "Email",
+                        text: $email
+                    ).textFieldStyle(MyTextFieldStyle())
+
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                }
                 
+                HStack {
+                    Text("Email notifications")
+                        .font(.title3)
+                        .multilineTextAlignment(.leading)
+//                        .frame(maxWidth: .infinity)
+                        .fontWeight(.bold)
+                        .padding(.leading,18)
+                        
+                    Spacer()
+                }.padding([.bottom,.top])
+                
+                HStack() {
+                    Toggle("", isOn: $doesClose)
+                        .toggleStyle(CheckboxToggleStyle()).padding(.leading,20)
+                    Text("Order Statuses")
+                    Spacer()
+                }.padding(.bottom)
+               
+                HStack() {
+                    Toggle("", isOn: $doesClose)
+                        .toggleStyle(CheckboxToggleStyle()).padding(.leading,20)
+                    Text("Password Changes")
+                    Spacer()
+                }.padding(.bottom)
+                
+                HStack() {
+                    Toggle("", isOn: $doesClose)
+                        .toggleStyle(CheckboxToggleStyle()).padding(.leading,20)
+                    Text("Special Offers")
+                    Spacer()
+                }.padding(.bottom)
+                
+                HStack() {
+                    Toggle("", isOn: $doesClose)
+                        .toggleStyle(CheckboxToggleStyle()).padding(.leading,20)
+                    Text("Email Notificatitons")
+                    Spacer()
+                }.padding(.bottom)
+            
                 
                 
                 Button("Logout"){
@@ -63,6 +158,11 @@ struct UserProfileView: View {
                     )) .padding()
                    
                 Spacer()
+            }.onAppear(){
+                
+                firstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
+                lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
+                email = UserDefaults.standard.string(forKey: kEmail) ?? ""
             }
             .navigationBarTitle("", displayMode: .inline)
         }.navigationBarBackButtonHidden(true)

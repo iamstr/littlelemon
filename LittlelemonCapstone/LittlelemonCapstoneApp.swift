@@ -90,3 +90,18 @@ struct MyTextFieldStyle: TextFieldStyle {
         ).padding()
     }
 }
+
+
+struct CheckboxToggleStyle: ToggleStyle {
+  func makeBody(configuration: Self.Configuration) -> some View {
+    ZStack {
+      configuration.label
+      Spacer()
+      Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+        .resizable()
+        .frame(width:24, height: 24)
+        .foregroundColor(.primaryColor1)
+        .onTapGesture { configuration.isOn.toggle() }
+    }
+  }
+}
