@@ -16,6 +16,10 @@ struct MenuView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @State private var isLoggedOut=false
+    @State var startersIsToggled = false
+    @State var mainsIsToggled = false
+    @State var dessertsIsToggled = false
+    @State var drinksIsToggled = false
     
     func getMenuData() {
             // Clear the database before fetching new data
@@ -81,61 +85,110 @@ struct MenuView: View {
                                      selector:
                                        #selector(NSString.localizedStandardCompare))]
        }
-//       
-     func buildPredicate() -> NSPredicate {
-            if searchText.isEmpty {
-                return NSPredicate(value: true)
-            } else {
-                return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-            }
+    func buildPredicate() -> NSPredicate {
+        var predicates = [NSPredicate]()
+        
+        // Add predicate for searchText
+        if !searchText.isEmpty {
+            let searchTextPredicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+            predicates.append(searchTextPredicate)
         }
+        
+        // Add predicates for toggled states
+        if startersIsToggled {
+            let startersPredicate = NSPredicate(format: "category == %@", "starters")
+            predicates.append(startersPredicate)
+        }
+        
+        if mainsIsToggled {
+            let mainsPredicate = NSPredicate(format: "category == %@", "mains")
+            predicates.append(mainsPredicate)
+        }
+        
+        if dessertsIsToggled {
+            let dessertsPredicate = NSPredicate(format: "category == %@", "desserts")
+            predicates.append(dessertsPredicate)
+        }
+        
+        if drinksIsToggled {
+            let drinksPredicate = NSPredicate(format: "category == %@", "drinks")
+            predicates.append(drinksPredicate)
+        }
+        
+        // Combine predicates with AND operator
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        return compoundPredicate
+    }
+
     
     var body: some View {
         VStack{
             TopNavView()
             VStack {
-                       HStack {
-                           VStack(alignment: .leading) {
-                               Text("Little Lemon")
-                                   .foregroundColor(Color(hex:"#F4CE14"))
-                                   .font(.largeTitle)
-                                   .padding(.leading)
-                                   .padding(.top)
-                               
-                               Text("Chicago")
-                                   .foregroundColor(.white)
-                                   .font(.title2)
-                                   .padding(.leading)
-                               
-                               Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                                   .foregroundColor(.white)
-                                   .font(.subheadline).frame(width:.infinity)
-                                   .padding([.leading, .bottom])
-                           }.padding(.horizontal)
-                           Spacer()
-                           Image("Hero image")
-                               .resizable()
-                               .aspectRatio(contentMode: .fill)
-                               .frame(maxWidth: 120, maxHeight: 140)
-                               .clipShape(Rectangle())
-                               .cornerRadius(16)
-                       }
-
-                       
-                       TextField("Search menu", text: $searchText)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Little Lemon")
+                            .foregroundColor(Color(hex:"#F4CE14"))
+                            .font(.title)
+                            .padding(.leading)
+                            .padding(.top)
+                        
+                        Text("Chicago")
+                            .foregroundColor(.white)
+                            .font(.title2)
+                            .padding(.leading)
+                        
+                        Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                            .foregroundColor(.white)
+                            .font(.subheadline).frame(width:.infinity)
+                            .padding([.leading, .bottom])
+                    }.padding(.horizontal)
+                    Spacer()
+                    Image("Hero image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: 120, maxHeight: 140)
+                        .clipShape(Rectangle())
+                        .cornerRadius(16)
+                }
+                
+                
+                TextField("Search menu", text: $searchText)
                     .textFieldStyle(MyTextFieldStyle())
-                          
-
-                                           
-                   }.padding(.bottom,10)
-                   .background(Color.primaryColor1)
-                   
+                
+                
+                
+            }.padding(.bottom,10)
+                .background(Color.primaryColor1)
+            
+            
+            
+            Text("ORDER FOR DELIVERY!")
+                .font(.title3)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
+                .padding(.leading)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    Toggle("Starters", isOn: $startersIsToggled)
+                    Toggle("Mains", isOn: $mainsIsToggled)
+                    Toggle("Desserts", isOn: $dessertsIsToggled)
+                    Toggle("Drinks", isOn: $drinksIsToggled)
+                }
+                .toggleStyle(CategoryToggle())
+                .padding(.horizontal)
+            }
+            
+            Divider().padding([.top, .leading, .trailing])
+        
    
             FetchedObjects(predicate: buildPredicate(),
                            sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                            List(dishes, id: \.self) { dish in
  MenuItemView(dish: dish)
-                           }.listStyle(.plain).padding([.horizontal,.top])
+                           }.listStyle(.plain).padding([.horizontal])
                        }
             .onAppear {
             

@@ -75,7 +75,10 @@ extension View {
 
 extension Color {
     static let primaryColor1 = Color(#colorLiteral(red: 0.2862745225, green: 0.3686274588, blue: 0.3411764801, alpha: 1))
-    static let secondaryColor1 = Color(#colorLiteral(red: 0.9568627477, green: 0.8078432088, blue: 0.07843137532, alpha: 1))
+    static let secondaryColor1 = Color(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1))
+    static let lightGray = Color(#colorLiteral(red: 0.9276351333, green: 0.9375831485, blue: 0.9331009984, alpha: 1))
+    static let lightGrayColor = #colorLiteral(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+
     
 }
 
@@ -105,3 +108,28 @@ struct CheckboxToggleStyle: ToggleStyle {
     }
   }
 }
+
+struct CategoryToggle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+      
+        Button(action:{
+            
+            configuration.isOn.toggle()
+            
+        },label:{ HStack{
+            
+            configuration.label
+        }})
+        
+        
+        .padding(.horizontal)
+        .padding(.vertical,10)
+        .fontWeight(.bold)
+        .background(configuration.isOn ? Color.primaryColor1 : Color.lightGray)
+        .foregroundColor(configuration.isOn ? .white : Color.primaryColor1)
+        .cornerRadius(16)
+    }
+}
+
+
+

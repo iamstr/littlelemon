@@ -188,6 +188,7 @@ struct UserProfileView: View {
                         // Remove all entries from UserDefaults
                         if let bundleIdentifier = Bundle.main.bundleIdentifier {
                             UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+                            UserDefaults.standard.synchronize()
                         }
 
                         isLoggedOut = true
