@@ -15,7 +15,7 @@ struct MenuView: View {
     @State private var searchText = ""
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
-    
+    @State private var isLoggedOut=false
     
     func getMenuData() {
             // Clear the database before fetching new data
@@ -144,7 +144,15 @@ struct MenuView: View {
                 
                 getMenuData()
             }
-        }
+            
+          
+            
+        }    .navigationDestination(isPresented: $isLoggedOut){
+            
+            
+            OnboardingView().navigationBarBackButtonHidden(true)
+        
+    }
     }
 }
 

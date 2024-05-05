@@ -142,3 +142,5 @@ struct OnboardingView2: View {
 #Preview {
     OnboardingView2()
 }
+
+

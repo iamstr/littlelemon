@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F02D4942BE7A94600484635 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02D4932BE7A94600484635 /* OnboardingView2.swift */; };
+		9F02D4962BE7BCAB00484635 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02D4952BE7BCAB00484635 /* NotificationView.swift */; };
 		9FC695E62BE0476E00D34783 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FC695E42BE0476E00D34783 /* ExampleDatabase.xcdatamodeld */; };
 		9FC695E82BE0C97F00D34783 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC695E72BE0C97F00D34783 /* MenuItemView.swift */; };
 		9FE37DCA2BE2635B00D83399 /* TopNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE37DC92BE2635B00D83399 /* TopNavView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F02D4932BE7A94600484635 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
+		9F02D4952BE7BCAB00484635 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9FC695E52BE0476E00D34783 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		9FC695E72BE0C97F00D34783 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		9FE37DC92BE2635B00D83399 /* TopNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				9FF978762BDEFD710093369C /* MenuItem.swift */,
 				9FF978712BDEFCD20093369C /* Persistence.swift */,
 				9FF978682BDD69BC0093369C /* OnboardingView.swift */,
+				9F02D4932BE7A94600484635 /* OnboardingView2.swift */,
+				9F02D4952BE7BCAB00484635 /* NotificationView.swift */,
 				9FF9786E2BDE8BDD0093369C /* UserProfileView.swift */,
 				9FF9786A2BDE86480093369C /* HomeView.swift */,
 				9FF9786C2BDE884F0093369C /* MenuView.swift */,
@@ -302,7 +308,9 @@
 				9FF978722BDEFCD20093369C /* FetchedObjects.swift in Sources */,
 				9FF978772BDEFD710093369C /* MenuItem.swift in Sources */,
 				9FF978752BDEFD460093369C /* MenuList.swift in Sources */,
+				9F02D4942BE7A94600484635 /* OnboardingView2.swift in Sources */,
 				9FF978732BDEFCD20093369C /* Persistence.swift in Sources */,
+				9F02D4962BE7BCAB00484635 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,14 @@ let kFirstName = "first_name_key"
 let kLastName = "last_name_key"
 let kEmail = "email_key"
 let kIsLoggedIn = "kIsLoggedIn"
+let kPhone = "phone_key"
+let kOrderStatuses =  "order_statuses_key"
+let kPasswordChanges =  "password_changes_key"
+let kSpecialOffers =  "special_offers_key"
+let kNewsLetter =  "news_letter_key"
+
+
+
 
 struct OnboardingView: View {
     @State private var firstName: String = ""
@@ -21,12 +29,12 @@ struct OnboardingView: View {
    
     
     var body: some View {
-        NavigationStack {
-            Image("Logo")
+        NavigationStack{
             
-            NavigationView{
+            
                 
                 VStack{
+                    Image("Logo")
                     
                     HStack {
                         VStack(alignment: .leading) {
@@ -38,13 +46,13 @@ struct OnboardingView: View {
                             
                             Text("Chicago")
                                 .foregroundColor(.white)
-                                .font(.title2)
+                                .font(.title)
                                 .padding(.leading)
                             
                             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                                 .foregroundColor(.white)
                                 .font(.subheadline).frame(maxWidth:.infinity)
-                                .padding([.leading, .bottom])
+                                .padding([ .bottom])
                             
                         }.padding(.horizontal)
                         Spacer()
@@ -54,7 +62,9 @@ struct OnboardingView: View {
                             .frame(maxWidth: 120, maxHeight: 140)
                             .clipShape(Rectangle())
                             .cornerRadius(16)
-                    }.padding(.bottom,10).padding(.top,-40).background(Color.primaryColor1)
+                    }.padding(.bottom,10).padding(.top,10)
+                        .background(Color.primaryColor1)
+                    
                     VStack(alignment: .leading) {
                         Text("First Name")
                             .padding(.leading,20)
@@ -70,7 +80,7 @@ struct OnboardingView: View {
                         .disableAutocorrection(true)
                         .textFieldStyle(MyTextFieldStyle())
                     }
-                   
+                    
                     VStack(alignment: .leading) {
                         Text("Last Name").padding(.leading,20)
                             .padding(.top,1)
@@ -80,73 +90,48 @@ struct OnboardingView: View {
                             "Last Name",
                             text: $lastName
                         ).textFieldStyle(MyTextFieldStyle())
-
-                        .textInputAutocapitalization(.never)
-                        .disableAutocorrection(true)
-                    }
-
-                   
-                    VStack(alignment: .leading) {
-                        Text("Last Name")
-                            .padding(.leading,20)
-                            .padding(.top,1)
-                            .padding(.bottom,-10)
-                            .foregroundColor(.gray)
-                        TextField(
-                            "Email",
-                            text: $email
-                        ).textFieldStyle(MyTextFieldStyle())
-
-                        .textInputAutocapitalization(.never)
-                        .disableAutocorrection(true)
-                    }
-
-                   
-                    
-                    
-                    // Button to register user
-                    Button("Register") {
                         
-                        if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
-                            // Store user data in UserDefaults
-                            UserDefaults.standard.set(firstName, forKey: kFirstName)
-                            UserDefaults.standard.set(lastName, forKey: kLastName)
-                            UserDefaults.standard.set(email, forKey: kEmail)
-                            UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-                          
-                            isLoggedIn = true
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
+                    }
+                    
+                    
+                    
+                    
+                    
+                        // Button to register user
+                        Button("Register") {
+                            if !firstName.isEmpty && !lastName.isEmpty {
+                                // Store user data in UserDefaults
+                                UserDefaults.standard.set(firstName, forKey: kFirstName)
+                                UserDefaults.standard.set(lastName, forKey: kLastName)
+                                isLoggedIn = true
+                            }
                         }
-                    }.padding()
+                        .padding()
                         .frame(maxWidth: .infinity)
-                        
-                    .background(Color.primaryColor1,in: RoundedRectangle(
-                        cornerRadius: 16,
-                        style: .continuous
-                    ))
-                   
-                    .foregroundColor(.white)
-                        .padding() .navigationDestination(isPresented: $isLoggedIn){
-                        
-                        
-                        HomeView()
-                    }
+                        .background(Color.primaryColor1, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .foregroundColor(.white)
+                        .padding([.leading, .bottom, .trailing])
+                        .navigationDestination(isPresented: $isLoggedIn){
+                            OnboardingView2()
+                        }
                     
                     Spacer()
                     
+                    
                 }
-                onAppear{
-                    print(UserDefaults.standard.bool(forKey: kIsLoggedIn))
-                    if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                                       isLoggedIn = true
-                                   }
-                }
+                
             }
-            .padding(-10.0)
+            
+            
+        }
+
+
         
-    }
         
 }
-}
+
 
 
 

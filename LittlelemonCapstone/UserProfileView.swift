@@ -12,15 +12,22 @@ struct UserProfileView: View {
     let kFirstName = "first_name_key"
     let kLastName = "last_name_key"
     let kEmail = "email_key"
+    let kPhone = "phone_key"
     let kIsLoggedIn = "kIsLoggedIn"
+    let kOrderStatuses =  "order_statuses_key"
+    let kPasswordChanges =  "password_changes_key"
+    let kSpecialOffers =  "special_offers_key"
+    let kNewsLetter =  "news_letter_key"
     @Environment(\.presentationMode) var presentation
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
+    @State private var phone: String = ""
     @State private var orderStatuses = false
     @State private var passwordChanges = false
     @State private var specialOffers = false
     @State private var newsLetter = false
+    @State private var isLoggedOut = false
     
 
     var body: some View {
@@ -30,12 +37,20 @@ struct UserProfileView: View {
                 VStack(alignment:.leading){
                     
                     HStack {
+                        
                        
-                        Image(systemName: "arrowshape.left.circle.fill")
-                            .font(.system(size: 26))
-                            .padding(.leading)
-                            .foregroundColor(.primaryColor1)
+                        Button(action:{
+                            self.presentation.wrappedValue.dismiss()
+                            
+                        }){
+                            
+                            Image(systemName: "arrowshape.left.circle.fill")
+                                .font(.system(size: 26))
+                                .padding(.leading)
+                                .foregroundColor(.primaryColor1)
 
+                        }
+                 
                         Spacer()
                             Image("Logo")  .padding([.trailing,.leading])
                             Spacer()
@@ -96,7 +111,7 @@ struct UserProfileView: View {
 
                    
                     VStack(alignment: .leading) {
-                        Text("Last Name")
+                        Text("Email")
                             .padding(.leading,20)
                             .padding(.top,1)
                             .padding(.bottom,-10)
@@ -169,7 +184,8 @@ struct UserProfileView: View {
                     
                     Button("Logout"){
                         UserDefaults.standard.set(false, forKey: kIsLoggedIn)
-                        self.presentation.wrappedValue.dismiss()
+//                        self.presentation.wrappedValue.dismiss()
+                        isLoggedOut = true
                     }.foregroundColor(.primaryColor1)
                         .padding()
                         .fontWeight(Font.Weight.bold)
@@ -178,6 +194,12 @@ struct UserProfileView: View {
                             cornerRadius: 8,
                             style: .continuous
                         )) .padding()
+                            .navigationDestination(isPresented: $isLoggedOut){
+                               
+                               
+                               OnboardingView().navigationBarBackButtonHidden(true)
+                           
+                       }
                        
                     Spacer()
                     
@@ -188,6 +210,14 @@ struct UserProfileView: View {
                             firstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
                             lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
                             email = UserDefaults.standard.string(forKey: kEmail) ?? ""
+                            phone = UserDefaults.standard.string(forKey: kPhone) ?? ""
+                            
+                            orderStatuses = UserDefaults.standard.bool(forKey: kOrderStatuses)
+                            newsLetter = UserDefaults.standard.bool(forKey: kNewsLetter)
+                            passwordChanges = UserDefaults.standard.bool(forKey: kPasswordChanges)
+                            specialOffers = UserDefaults.standard.bool(forKey: kSpecialOffers)
+                            
+                            
                         }.foregroundColor(.primaryColor1)
                             .fontWeight(Font.Weight.bold)
                             .padding()
