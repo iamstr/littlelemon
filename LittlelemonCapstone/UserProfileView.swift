@@ -240,7 +240,13 @@ struct UserProfileView: View {
                                 UserDefaults.standard.set(firstName, forKey: kFirstName)
                                 UserDefaults.standard.set(lastName, forKey: kLastName)
                                 UserDefaults.standard.set(email, forKey: kEmail)
-                                UserDefaults.standard.set(true, forKey: kIsLoggedIn)
+                                UserDefaults.standard.set(phone, forKey: kPhone)
+                                 
+                                UserDefaults.standard.set(orderStatuses,forKey: kOrderStatuses)
+                                UserDefaults.standard.set(newsLetter,forKey: kNewsLetter)
+                                UserDefaults.standard.set(passwordChanges, forKey: kPasswordChanges)
+                                UserDefaults.standard.set( passwordChanges,forKey: kSpecialOffers)
+                                                    
                               
                                
                             }
@@ -261,6 +267,12 @@ struct UserProfileView: View {
                     firstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
                     lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
                     email = UserDefaults.standard.string(forKey: kEmail) ?? ""
+                    phone = UserDefaults.standard.string(forKey: kPhone) ?? ""
+                    
+                    orderStatuses = UserDefaults.standard.bool(forKey: kOrderStatuses)
+                    newsLetter = UserDefaults.standard.bool(forKey: kNewsLetter)
+                    passwordChanges = UserDefaults.standard.bool(forKey: kPasswordChanges)
+                    specialOffers = UserDefaults.standard.bool(forKey: kSpecialOffers)
                 }
             }
          
