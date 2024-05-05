@@ -138,9 +138,10 @@ struct MenuView: View {
                            }.listStyle(.plain).padding([.horizontal,.top])
                        }
             .onAppear {
-                if !UserDefaults.standard.bool(forKey: kIsLoggedIn){
-                    self.presentation.wrappedValue.dismiss()
-                }
+            
+                isLoggedOut = UserDefaults.standard.bool(forKey: kIsLoggedIn)
+                
+                
                 getMenuData()
             }
         }
