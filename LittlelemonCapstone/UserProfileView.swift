@@ -109,6 +109,22 @@ struct UserProfileView: View {
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                     }
+                        
+                        
+                        VStack(alignment: .leading) {
+                            Text("Phone")
+                                .padding(.leading,20)
+                                .padding(.top,1)
+                                .padding(.bottom,-10)
+                                .foregroundColor(.gray)
+                            TextField(
+                                "Phone",
+                                text: $phone
+                            ).textFieldStyle(MyTextFieldStyle())
+
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
+                        }
                     
                     HStack {
                         Text("Email notifications")
