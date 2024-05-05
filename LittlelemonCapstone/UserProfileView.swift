@@ -184,7 +184,12 @@ struct UserProfileView: View {
                     
                     Button("Logout"){
                         UserDefaults.standard.set(false, forKey: kIsLoggedIn)
-//                        self.presentation.wrappedValue.dismiss()
+
+                        // Remove all entries from UserDefaults
+                        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                            UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+                        }
+
                         isLoggedOut = true
                     }.foregroundColor(.primaryColor1)
                         .padding()
